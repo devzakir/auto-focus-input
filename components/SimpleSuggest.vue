@@ -13,7 +13,7 @@
       @select="onSuggestSelect"
     >
       <div slot="suggestion-item" slot-scope="{ suggestion }">
-        {{ suggestion.name }} [{{ suggestion.type }}]
+        {{ suggestion.name }} {{ suggestion.type }}
       </div>
     </vue-simple-suggest>
   </div>
