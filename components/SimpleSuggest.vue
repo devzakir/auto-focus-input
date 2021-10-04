@@ -8,7 +8,6 @@
       placeholder="Search location or hotel name..."
       :list="getList"
       :max-suggestions="10"
-      ref="input"
       :min-length="3"
       :filter-by-query="false"
       @select="onSuggestSelect"
@@ -68,13 +67,7 @@ export default {
       console.log(suggest.name);
       let modal = document.getElementById("search-modal");
       modal.checked = false;
-    },
-    focusInput() {
-    //   this.$refs.input.focus();
     }
-  },
-  mounted(){
-      this.focusInput();
   }
 };
 </script>
