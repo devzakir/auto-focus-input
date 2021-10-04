@@ -8,7 +8,7 @@
       placeholder="Search location or hotel name..."
       :list="getList"
       :max-suggestions="10"
-      ref="input"
+      ref="autoFocusInput"
       :min-length="3"
       :filter-by-query="false"
       @select="onSuggestSelect"
@@ -25,6 +25,7 @@ import VueSimpleSuggest from "vue-simple-suggest";
 import "vue-simple-suggest/dist/styles.css";
 
 export default {
+  props: ['modalOpen'],
   components: {
     VueSimpleSuggest,
   },
@@ -69,12 +70,13 @@ export default {
       let modal = document.getElementById("search-modal");
       modal.checked = false;
     },
-    focusInput() {
-    //   this.$refs.input.focus();
-    }
   },
-  mounted(){
-      this.focusInput();
+  watch: {
+    modalOpen (newValue){
+      if(newValue == true){
+        this.$refs.autoFocusInput.$el.focus();
+      }
+    }
   }
 };
 </script>

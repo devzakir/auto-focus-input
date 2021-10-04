@@ -6,7 +6,7 @@
         <div class="modal">
           <div class="modal-box bg-white h-full">
             <div>
-                <simple-suggest />
+                <simple-suggest :modalOpen="modal"/>
             </div>
             <div class="modal-action">
               <label for="search-modal" class="btn">Close</label>
