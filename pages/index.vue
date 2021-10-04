@@ -2,12 +2,12 @@
     <div class="w-1/2 max-w-screen-lg m-auto pt-20">
       <div class="mb-4">
         <label for="search-modal" class="inline-block text-gray-700 w-full py-2.5 input input-primary input-bordered font-bold">Where to?</label> 
-        <input type="checkbox" id="search-modal" class="modal-toggle"> 
+        <input type="checkbox" id="search-modal" class="modal-toggle" v-model="modal"> 
         <div class="modal">
           <div class="modal-box bg-white h-full">
-                <div>
-                  <simple-suggest />
-                </div>
+            <div>
+                <simple-suggest />
+            </div>
             <div class="modal-action">
               <label for="search-modal" class="btn">Close</label>
             </div>
@@ -18,5 +18,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+    data(){
+        return {
+            modal: false,
+        }
+    },
+    watch: {
+        modal (newValue, oldValue){
+            if(newValue == true){
+                document.querySelector('.default-input').focus();
+            }
+        }
+    }
+}
 </script>
