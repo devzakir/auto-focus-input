@@ -26,10 +26,15 @@ export default {
     },
     watch: {
         modal (newValue, oldValue){
+            console.log('modal is - ' + newValue)
+            console.log('old value is - ' + oldValue)
             if(newValue == true){
                 document.querySelector('.default-input').focus();
             }
         }
+    },
+    mouted(){
+      console.log('hello, world');
     }
 }
 </script>

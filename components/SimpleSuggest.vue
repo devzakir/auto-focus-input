@@ -81,6 +81,9 @@ export default {
         this.$refs.autoFocusInput.$el.focus();
       }
     }
+  },
+  mounted(){
+    console.log('simple suggest component');
   }
 };
 </script>
