@@ -73,7 +73,11 @@ export default {
   },
   watch: {
     modalOpen (newValue){
+      console.log('updated value is - ' + newValue)
       if(newValue == true){
+
+        console.log(this.$refs.autoFocusInput);
+        console.log(this.$refs.autoFocusInput.$el);
         this.$refs.autoFocusInput.$el.focus();
       }
     }
